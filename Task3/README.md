@@ -20,12 +20,14 @@
   I created the container and login inside to get de **default file** (/etc/nginx/sites-available/) to change the default port
 
 ```
+  
   $ docker run -it --name test-888  linux-nginx:888 /bin/bash
+  
 ```
 
-    I changed the default file on my folder to build a new image with the new default port
+   I changed the default file on my folder to build a new image with the new default port
   
-    ![default_file](../images/task3-img01.png)
+   ![default_file](../images/task3-img01.png)
   
 
 - Create an image out of it.
