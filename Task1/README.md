@@ -2,9 +2,11 @@
 
   - Build a Windows server (you can download predeployed windows 2016 ova from here: http://tinyurl.com/sol9vhc)
 
-  ![default_file](../images/task3-img01.png)
+  ![default_file](../images/task1-img00.png)
 
-  https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-ansible-on-ubuntu
+  Install Ansible using the official documentation : [Ubuntu Ansible Install](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-ansible-on-ubuntu)
+  
+  On Windows Server run the commands below (PowerShell)
   
 
 ```
