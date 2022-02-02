@@ -6,6 +6,12 @@
 
   Install Ansible using the official documentation : [Ubuntu Ansible Install](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-ansible-on-ubuntu)
   
+  Create ansible user on windows and set to admin group
+  
+  ![default_file](../images/task1-img01.png)
+  
+  ![default_file](../images/task1-img03.png)
+  
   On Windows Server run the commands below (PowerShell)
   
 
