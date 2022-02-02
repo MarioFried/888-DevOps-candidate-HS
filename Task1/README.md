@@ -43,6 +43,10 @@
   winrm set winrm/config/service/auth '@{Basic="true"}'
 ```
 
+    And test the connection
+  
+    ![default_file](../images/task1-img04.png)
+
   - Write Ansible playbook to execute the following, and upload it to your git repo:
       * Install IIS and create a site which serves HTML page with "Hello World"
       * Create a self-signed certificate and bind it to the site you created in the previous bullet on port 443
