@@ -90,6 +90,10 @@
 
 ... and install WIRESHARK to capture the traffic and save pcap file
     
-![default_file](../images/task1-img06.png)    
+![default_file](../images/task1-img06.png)
+
+... and access the "web side" from my mobile (4g network)
+
+![default_file](../images/task1-img08.png)
 
   - Filter the download session from the pcap file and create a screenshot, describe the communication steps steps in the session
