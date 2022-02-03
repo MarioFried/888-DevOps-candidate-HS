@@ -88,4 +88,8 @@
 </html>
 ```
 
+    ... and install WIRESHARK to capture the traffic and save pcap file
+    
+![default_file](../images/task1-img06.png)    
+
   - Filter the download session from the pcap file and create a screenshot, describe the communication steps steps in the session
