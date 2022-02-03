@@ -107,6 +107,10 @@ I have the same erro when try install the service directly on Windows Server
 Necessary more time to investigate. Maybe the problem is with the DNS service in the VM on Azure.
       
   - Add a record to point the local web server you created, also make sure to create a record to perform dns reverse lookup
+
+I added the record on Azure: http://mafried.eastus2.cloudapp.azure.com/
+
+![default_file](../images/task1-img14.png)
   
   - Add a small exe file or a an image to the web site you created and download it via HTTP(not via HTTPS). Record(sniff) the download session into a pcap file.
 
