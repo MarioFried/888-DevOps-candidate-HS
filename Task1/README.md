@@ -88,7 +88,7 @@
 </html>
 ```
 
-    ... and install WIRESHARK to capture the traffic and save pcap file
+... and install WIRESHARK to capture the traffic and save pcap file
     
 ![default_file](../images/task1-img06.png)    
 
