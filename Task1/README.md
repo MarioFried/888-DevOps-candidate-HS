@@ -72,7 +72,42 @@
       
       * Create a self-signed certificate and bind it to the site you created in the previous bullet on port 443
       * Install dns service and create new zone(you can choose any domain name that you want)
+ 
+I tried to use this playbook:
+
+```
+---
+- name: Install IIS
+  hosts: windows
+  gather_facts: true
+  tasks:
+   - win_feature:
+       name: "web-server"
+       state: present
+       restart: yes
+       include_sub_features: yes
+       include_management_tools: yes
+   - name: default-website-index
+     win_copy:
+       src: /home/azureuser/index.html
+       dest: "C:\\inetpub\\wwwroot\\index.html"
+   - win_feature:
+       name: "DNS"
+       state: present
+```
+
+but, unfortunately didn't work
+
+![default_file](../images/task1-img11.png)
+
+I have the same erro when try install the service directly on Windows Server
+
+![default_file](../images/task1-img12.png)
+
+Necessary more time to investigate. Maybe the problem is with the DNS service in the VM on Azure.
+      
   - Add a record to point the local web server you created, also make sure to create a record to perform dns reverse lookup
+  
   - Add a small exe file or a an image to the web site you created and download it via HTTP(not via HTTPS). Record(sniff) the download session into a pcap file.
 
     I changed the index.html adding a image to "web site" created
@@ -81,7 +116,9 @@
 <html>
 <body>
 
-  <p align=center><img src='http://www.ansible.com/hubfs/2016_Images/Assets/Ansible-Mark-Large-RGB-Mango.png?t=1458747764369' align=>
+  <p align=center><img src='https://images.pexels.com/photos/2458028/pexels-photo-2458028.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' align=>
+  <p align=center><img src='https://images.pexels.com/photos/2433164/pexels-photo-2433164.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' align=>
+  <p align=center><img src='https://images.pexels.com/photos/1804197/pexels-photo-1804197.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' align=>
   <h1 align=center>Hello World! My App version 888 deployed via Ansible.
 
 </body>
@@ -92,8 +129,11 @@
     
 ![default_file](../images/task1-img06.png)
 
-... and access the "web side" from my mobile (4g network)
+... and access the "web side" from mobile (4g network)
 
 ![default_file](../images/task1-img08.png)
 
   - Filter the download session from the pcap file and create a screenshot, describe the communication steps steps in the session
+
+
+![default_file](../images/task1-img10.png)
