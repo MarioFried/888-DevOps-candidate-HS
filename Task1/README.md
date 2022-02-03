@@ -70,7 +70,44 @@
          
 ![default_file](../images/task1-img05.png)
       
-      * Create a self-signed certificate and bind it to the site you created in the previous bullet on port 443
+
+
+  * Create a self-signed certificate and bind it to the site you created in the previous bullet on port 443
+
+Run openssl command to create the self-signed certificate
+
+```
+        $ openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out example.crt -keyout example.key
+```
+
+... and add the commands on PlayBook to binding it to the site
+
+```
+---
+- name: Install IIS
+  hosts: windows
+  gather_facts: true
+  tasks:
+   - win_feature:
+       name: "web-server"
+       state: present
+       restart: yes
+       include_sub_features: yes
+       include_management_tools: yes
+   - name: default-website-index
+     win_copy:
+       src: /home/azureuser/index.html
+       dest: "C:\\inetpub\\wwwroot\\index.html"
+   - name: Add a HTTPS binding
+     community.windows.win_iis_webbinding:
+       name: Default Web Site
+       certificate_store_name: "/home/azureuser/"
+       protocol: https
+       port: 443
+       ip: 172.16.0.4
+       state: present
+```
+      
       * Install dns service and create new zone(you can choose any domain name that you want)
  
 I tried to use this playbook:
