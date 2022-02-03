@@ -107,7 +107,9 @@ Run openssl command to create the self-signed certificate
        ip: 172.16.0.4
        state: present
 ```
-      
+![default_file](../images/task1-img15.png)
+
+
       * Install dns service and create new zone(you can choose any domain name that you want)
  
 I tried to use this playbook:
